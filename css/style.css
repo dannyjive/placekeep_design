@@ -226,6 +226,7 @@ a {
 .btn {
   display: inline-block;
   background: var(--yellow);
+  text-align: center;
   color: var(--teal);
   font-weight: 700;
   font-size: 0.78rem;
@@ -338,7 +339,7 @@ a {
 .define {
   background: var(--teal);
   margin-top: -3rem;
-  padding: 8.5rem 3.5rem 4.5rem;
+  padding: 8.5rem 3.5rem 6.5rem;
 }
 .define .ipa {
   text-align: right;
@@ -388,11 +389,11 @@ a {
    ========================================================================== */
 
 .work {
-  margin-top: -3rem;
+  margin-top: -4rem;
   padding-bottom: 0;
 }
 .work .cards {
-  margin-top: 1.6rem;
+  margin-top: 3.6rem;
 }
 /* Purple project cards (Dignity by Design, Rooted Expansion, ...) */
 .proj {
@@ -406,8 +407,8 @@ a {
   font-weight: 700;
   margin: 0.2rem 0 1rem;
 }
-.proj svg {
-  height: 5.6rem;
+.icons {
+  height: 8rem;
   width: auto;
   margin-bottom: 1.3rem;
 }
@@ -447,7 +448,7 @@ a {
   font-weight: 700;
   font-size: 1.02rem;
   line-height: 1.6;
-  max-width: 17rem;
+  max-width: 20rem;
 }
 
 /* ==========================================================================
