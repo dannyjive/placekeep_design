@@ -1,84 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Let's Connect | Placekeep</title>
-<meta name="description" content="Tell Placekeep what's going on, share a project opportunity, or say hello.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Source+Sans+3:wght@400;600;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<script src="script.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Let's Connect | Placekeep</title>
+  <meta name="description" content="Tell Placekeep what's going on, share a project opportunity, or say hello.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Source+Sans+3:wght@400;600;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./javascript/script.js" defer></script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <a class="logo" href="index.html" aria-label="Placekeep home">PLACEKEEP</a>
-  <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
-  <nav class="nav" id="nav" aria-label="Main">
-    <div class="has-sub">
-      <a href="approach.html">Approach</a>
-      <ul class="sub">
-        <li><a href="approach.html#project-owners">For Project Owners</a></li>
-        <li><a href="approach.html#design-firms">For Design Firms</a></li>
-      </ul>
+  <header class="site-header">
+    <a href="./index.html">
+      <img class="logo" src="./img/Placekeep_Logo_Orange.png" alt="Placekeep home">
+    </a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false"
+      aria-controls="nav"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <div class="has-sub">
+        <a href="approach.html">Approach</a>
+        <ul class="sub">
+          <li><a href="approach.html#project-owners">For Project Owners</a></li>
+          <li><a href="approach.html#design-firms">For Design Firms</a></li>
+        </ul>
+      </div>
+      <a href="about.html">About</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+
+  <main class="c-wrap">
+    <div class="connect">
+      <h1>Let’s Connect</h1>
+
+      <!-- Set each form's action to your form service endpoint (Formspree, Netlify, etc.) -->
+      <section class="acc">
+        <button class="acc-btn" id="b1" aria-expanded="false" aria-controls="f1"><strong>I don't know where to
+            start!</strong><span>You have a need, but haven't shaped it into a project yet</span></button>
+        <div class="acc-body" id="f1" role="region" aria-labelledby="b1" hidden>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="post">
+            <input type="hidden" name="inquiry_type" value="I don't know where to start">
+            <p class="hint">Just tell me what’s going on. No pressure to have this figured out yet.</p>
+            <div class="field"><label for="f1-msg">What’s going on?</label><textarea id="f1-msg" name="message" required
+                placeholder="Whatever you’ve got, even if it’s rough."></textarea></div>
+            <div class="field short"><label for="f1-email">Email address</label><input id="f1-email" type="email"
+                name="email" required placeholder="you@organization.org"></div>
+            <button class="submit" type="submit">Submit</button>
+            <p class="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="acc">
+        <button class="acc-btn" id="b2" aria-expanded="false" aria-controls="f2"><strong>I’ve got a project
+            opportunity</strong><span>You have a project or opportunity in mind</span></button>
+        <div class="acc-body" id="f2" role="region" aria-labelledby="b2" hidden>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="post">
+            <input type="hidden" name="inquiry_type" value="Project opportunity">
+            <p class="hint">Enough for me to understand the shape of the opportunity before we talk.</p>
+            <div class="field short"><label for="f2-name">Name</label><input id="f2-name" name="name" required
+                placeholder="Your name" autocomplete="name"></div>
+            <div class="field short"><label for="f2-org">Organization</label><input id="f2-org" name="organization"
+                placeholder="Organization name" autocomplete="organization"></div>
+            <div class="field"><label for="f2-msg">Briefly, what’s the opportunity</label><textarea id="f2-msg"
+                name="message" required
+                placeholder="A few sentences on the project or partnership, timeline if you have one."></textarea></div>
+            <div class="field short"><label for="f2-email">Email address</label><input id="f2-email" type="email"
+                name="email" required placeholder="you@organization.org"></div>
+            <button class="submit" type="submit">Submit</button>
+            <p class="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="acc">
+        <button class="acc-btn" id="b3" aria-expanded="false" aria-controls="f3"><strong>I want to
+            connect</strong><span>Networking and general outreach</span></button>
+        <div class="acc-body" id="f3" role="region" aria-labelledby="b3" hidden>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="post">
+            <input type="hidden" name="inquiry_type" value="General outreach">
+            <p class="hint">A quick way to say hello or continue a conversation.</p>
+            <div class="field"><label for="f3-msg">Message</label><textarea id="f3-msg" name="message" required
+                placeholder="Short and sweet is fine."></textarea></div>
+            <div class="field short"><label for="f3-email">Email address</label><input id="f3-email" type="email"
+                name="email" required placeholder="you@organization.org"></div>
+            <button class="submit" type="submit">Submit</button>
+            <p class="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
     </div>
-    <a href="about.html">About</a>
-    <a href="contact.html" aria-current="page">Contact</a>
-  </nav>
-</header>
-
-<main class="c-wrap">
-  <div class="connect">
-    <h1>Let’s Connect</h1>
-
-    <!-- Set each form's action to your form service endpoint (Formspree, Netlify, etc.) -->
-    <section class="acc">
-      <button class="acc-btn" id="b1" aria-expanded="false" aria-controls="f1"><strong>I don't know where to start!</strong><span>You have a need, but haven't shaped it into a project yet</span></button>
-      <div class="acc-body" id="f1" role="region" aria-labelledby="b1" hidden>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="post">
-          <input type="hidden" name="inquiry_type" value="I don't know where to start">
-          <p class="hint">Just tell me what’s going on. No pressure to have this figured out yet.</p>
-          <div class="field"><label for="f1-msg">What’s going on?</label><textarea id="f1-msg" name="message" required placeholder="Whatever you’ve got, even if it’s rough."></textarea></div>
-          <div class="field short"><label for="f1-email">Email address</label><input id="f1-email" type="email" name="email" required placeholder="you@organization.org"></div>
-          <button class="submit" type="submit">Submit</button>
-          <p class="status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
-    <section class="acc">
-      <button class="acc-btn" id="b2" aria-expanded="false" aria-controls="f2"><strong>I’ve got a project opportunity</strong><span>You have a project or opportunity in mind</span></button>
-      <div class="acc-body" id="f2" role="region" aria-labelledby="b2" hidden>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="post">
-          <input type="hidden" name="inquiry_type" value="Project opportunity">
-          <p class="hint">Enough for me to understand the shape of the opportunity before we talk.</p>
-          <div class="field short"><label for="f2-name">Name</label><input id="f2-name" name="name" required placeholder="Your name" autocomplete="name"></div>
-          <div class="field short"><label for="f2-org">Organization</label><input id="f2-org" name="organization" placeholder="Organization name" autocomplete="organization"></div>
-          <div class="field"><label for="f2-msg">Briefly, what’s the opportunity</label><textarea id="f2-msg" name="message" required placeholder="A few sentences on the project or partnership, timeline if you have one."></textarea></div>
-          <div class="field short"><label for="f2-email">Email address</label><input id="f2-email" type="email" name="email" required placeholder="you@organization.org"></div>
-          <button class="submit" type="submit">Submit</button>
-          <p class="status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
-    <section class="acc">
-      <button class="acc-btn" id="b3" aria-expanded="false" aria-controls="f3"><strong>I want to connect</strong><span>Networking and general outreach</span></button>
-      <div class="acc-body" id="f3" role="region" aria-labelledby="b3" hidden>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="post">
-          <input type="hidden" name="inquiry_type" value="General outreach">
-          <p class="hint">A quick way to say hello or continue a conversation.</p>
-          <div class="field"><label for="f3-msg">Message</label><textarea id="f3-msg" name="message" required placeholder="Short and sweet is fine."></textarea></div>
-          <div class="field short"><label for="f3-email">Email address</label><input id="f3-email" type="email" name="email" required placeholder="you@organization.org"></div>
-          <button class="submit" type="submit">Submit</button>
-          <p class="status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-  </div>
-</main>
+  </main>
 
 </body>
+
 </html>
