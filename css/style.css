@@ -248,7 +248,7 @@ a {
    ========================================================================== */
 .panel {
   background: var(--orange);
-  width: min(55%, 41rem);
+  width: min(50%, 35rem);
   margin: 0 auto;
   border-radius: 0.9rem;
   padding: 1.3rem 0 0;
@@ -701,6 +701,7 @@ a {
 .band {
   background: var(--white);
   padding-bottom: 0;
+  display: flow-root; 
 }
 .band .panel {
   margin-top: -4.6rem;
@@ -724,8 +725,12 @@ a {
   gap: 1.9rem 1.9rem;
   width: calc(100% + 5rem);
   margin: 1.3rem 0 0 -2.5rem;
-}
-.tab {
+}.tab {
+  --tab-h: 8rem;           
+  min-height: var(--tab-h);
+  padding: calc(var(--tab-h) / 2) 1rem 1rem;  
+  justify-content: flex-start;      
+
   grid-column: var(--c);
   grid-row: var(--r);
   background: var(--teal);
@@ -734,11 +739,8 @@ a {
   cursor: pointer;
   font-family: var(--font);
   text-align: left;
-  padding: 0.7rem 1rem 1rem;
-  min-height: 5.6rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   position: relative;
   font-weight: 700;
   font-size: 1rem;
@@ -746,22 +748,22 @@ a {
   border-radius: 0;
 }
 .tab small {
-  font-size: 0.6rem;
+  font-size: .8rem;
   font-weight: 600;
   opacity: 0.75;
   margin-bottom: 0.25rem;
 }
-/* Plus icon drawn with two gradient lines */
+/* Plus icon with rounded ends (SVG mask, colored by background-color) */
 .tab::after {
   content: "";
   position: absolute;
-  top: 0.4rem;
+  top: 0.6rem;
   right: 0.6rem;
   width: 2.2rem;
   height: 2.2rem;
-  background:
-    linear-gradient(var(--yellow), var(--yellow)) center/100% 3px no-repeat,
-    linear-gradient(var(--yellow), var(--yellow)) center/3px 100% no-repeat;
+  background-color: var(--yellow);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18M12 3v18' fill='none' stroke='black' stroke-width='2.7' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18M12 3v18' fill='none' stroke='black' stroke-width='2.7' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 /* Selected tab: yellow background, teal plus */
 .tab[aria-selected="true"] {
@@ -769,9 +771,7 @@ a {
   color: var(--teal);
 }
 .tab[aria-selected="true"]::after {
-  background:
-    linear-gradient(var(--teal), var(--teal)) center/100% 3px no-repeat,
-    linear-gradient(var(--teal), var(--teal)) center/3px 100% no-repeat;
+  background-color: var(--teal);
 }
 .tab:hover:not([aria-selected="true"]) {
   background: #235a54;
@@ -782,7 +782,7 @@ a {
   grid-column: 1/-1;
   grid-row: 3;
   color: var(--purple);
-  padding: 1.2rem 1.5rem 0 2.4rem;
+  padding: 1.2rem 5rem 0 4.5rem;
 }
 .tabs.three .tab-panel {
   grid-row: 2;
