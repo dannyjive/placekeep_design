@@ -437,6 +437,7 @@ a {
   padding: 7rem 3.5rem 5.5rem;
 }
 .closing .in {
+  height: 8rem;
   max-width: 40rem;
   margin: 0 auto;
   display: flex;
@@ -704,7 +705,7 @@ a {
   display: flow-root; 
 }
 .band .panel {
-  margin-top: -4.6rem;
+  margin-top: -2.6rem;
   margin-bottom: -3.4rem;
   border-radius: 0.9rem;
   padding-bottom: 2.6rem;
@@ -713,7 +714,7 @@ a {
   padding-top: 6.5rem;
 }
 .intro.after-band {
-  padding-bottom: 8rem;
+  padding-bottom: 6rem;
 }
 
 /* --- Tabs (desktop) / accordion (mobile) ---
@@ -822,6 +823,10 @@ a {
   margin: 0 auto;
 }
 
+.tiersText {
+  color: var(--purple);
+}
+
 /* --- Footer variant used on Approach, About, and Contact-linked pages --- */
 .closing .in.wide {
   justify-content: space-between;
@@ -917,6 +922,11 @@ a {
   margin: 0 6% 0 auto;
 }
 
+/* --- Keep text (for wrapping "dignity and belonging" words together) --- */
+.keep {
+  white-space: nowrap;
+}
+
 /* --- Mission / Vision (reuses .split from section 4) --- */
 .split.mv {
   max-width: 64rem;
@@ -937,14 +947,14 @@ a {
 .duo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  width: calc(100% + 7rem);
-  margin: 1.4rem 0 0 -3.5rem;
+  gap: 2rem;
+  width: calc(100% + 15rem);
+  margin: 2.4rem 0 0 -7.5rem;
 }
 .duo .card {
-  padding: 1.8rem 2rem 2.4rem;
+  padding: 1.8rem 2.5rem 2.4rem;
   text-align: center;
-  min-height: 11rem;
+  min-height: 15rem;
 }
 .duo .teal {
   background: var(--teal);
@@ -967,12 +977,12 @@ a {
   text-align: center;
   font-weight: 700;
   font-size: 1.3rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 /* Rounded-all-corners panel variant that overhangs the next section */
 .panel.round {
   border-radius: 0.9rem;
-  padding-bottom: 3.5rem;
+  padding-bottom: 6.5rem;
   margin-bottom: -3.4rem;
 }
 .after-panel {
