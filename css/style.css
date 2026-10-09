@@ -311,7 +311,7 @@ a {
    "The gap between a space problem and a real solution" with yellow bar.
    ========================================================================== */
 .gap {
-  padding: 3.6rem 2.2rem 3.6rem 5.6rem;
+  padding: 3.6rem 4.2rem 3.6rem 4.6rem;
   color: var(--purple);
 }
 .gap h3 {
@@ -325,7 +325,7 @@ a {
   padding-left: 1rem;
   font-size: 1rem;
   line-height: 1.6;
-  width: 30rem;
+  width: 25rem;
 }
 .gap .quote p + p {
   margin-top: 1.1rem;
@@ -561,13 +561,10 @@ a {
   .gap .quote {
     font-size: 0.82rem;
   }
- .define {
-  margin-top: -2rem;
-  padding: 5.5rem 1.2rem 4.5rem; 
-}
-
-
-
+  .define {
+    margin-top: -2rem;
+    padding: 5.5rem 1.2rem 4.5rem;
+  }
 
   .define .wrap {
     display: flex;
@@ -587,9 +584,9 @@ a {
     margin: 1.2rem 0 0;
     max-width: 13rem;
   }
-.work {
-  margin-top: -2.5rem; 
-}
+  .work {
+    margin-top: -2.5rem;
+  }
   .proj {
     min-height: 0;
   }
@@ -702,7 +699,7 @@ a {
 .band {
   background: var(--white);
   padding-bottom: 0;
-  display: flow-root; 
+  display: flow-root;
 }
 .band .panel {
   margin-top: -2.6rem;
@@ -726,11 +723,12 @@ a {
   gap: 1.9rem 1.9rem;
   width: calc(100% + 5rem);
   margin: 1.3rem 0 0 -2.5rem;
-}.tab {
-  --tab-h: 8rem;           
+}
+.tab {
+  --tab-h: 8rem;
   min-height: var(--tab-h);
-  padding: calc(var(--tab-h) / 2) 1rem 1rem;  
-  justify-content: flex-start;      
+  padding: calc(var(--tab-h) / 2) 1rem 1rem;
+  justify-content: flex-start;
 
   grid-column: var(--c);
   grid-row: var(--r);
@@ -747,9 +745,17 @@ a {
   font-size: 1rem;
   line-height: 1.25;
   border-radius: 0;
+    -webkit-tap-highlight-color: transparent; /* removes the mobile tap flash */
+  -webkit-appearance: none;                 /* removes built-in button styling */
+  appearance: none;
+}
+/* Keep the tab's color from changing while it's pressed */
+.tab:active {
+  background: var(--teal);
+  color: var(--white);
 }
 .tab small {
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 600;
   opacity: 0.75;
   margin-bottom: 0.25rem;
@@ -763,8 +769,10 @@ a {
   width: 2.2rem;
   height: 2.2rem;
   background-color: var(--yellow);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18M12 3v18' fill='none' stroke='black' stroke-width='2.7' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18M12 3v18' fill='none' stroke='black' stroke-width='2.7' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18M12 3v18' fill='none' stroke='black' stroke-width='2.7' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18M12 3v18' fill='none' stroke='black' stroke-width='2.7' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
 }
 /* Selected tab: yellow background, teal plus */
 .tab[aria-selected="true"] {
@@ -776,6 +784,14 @@ a {
 }
 .tab:hover:not([aria-selected="true"]) {
   background: #235a54;
+}
+.tab[aria-selected="true"]:active {
+  background: var(--yellow);
+  color: var(--teal);
+}
+/* Hide the focus outline for mouse clicks (keyboard users still get it) */
+.tab:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* --- Tab panel content --- */
@@ -939,7 +955,7 @@ a {
   max-width: 21rem;
   font-size: 0.78rem;
   line-height: 1.55;
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.2rem;
 }
 
 /* --- "Two ways to work together" / "What we commit to" cards ---
@@ -993,7 +1009,7 @@ a {
    Desktop grid areas: "side head" / "side story". On mobile it stacks. */
 .bio {
   background: var(--teal);
-  padding: 5rem 3.5rem 8rem;
+  padding: 10rem 3.5rem 8rem;
 }
 .bio-grid {
   display: grid;
@@ -1010,7 +1026,11 @@ a {
   font-size: 1.65rem;
   line-height: 1.55;
   font-weight: 700;
-  margin: 3rem 0 1.8rem;
+  margin: 5rem 1rem 6rem 1.8rem;
+}
+/* Testimonials panel: pulls up to overlap the bottom of the teal bio band */
+.bio + .panel.round {
+  margin-top: -3rem;   
 }
 .headline .y {
   color: var(--yellow);
@@ -1114,7 +1134,7 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 1.8rem;
   width: calc(100% + 7rem);
-  margin: 1.6rem 0 0 -3.5rem;
+  margin: 2.6rem 0 0 -3.5rem;
 }
 .quotes figure {
   padding: 2rem 2.2rem 1.8rem;
@@ -1277,6 +1297,14 @@ a {
   padding: 1.35rem 5rem 1.2rem 5.9rem;
   position: relative;
   min-height: 6.1rem;
+    -webkit-tap-highlight-color: transparent; /* removes the mobile tap flash */
+  -webkit-appearance: none;                 /* removes built-in button styling */
+  appearance: none;
+}
+/* Keep the bar solid yellow while pressed */
+.acc-btn:active {
+  background: var(--yellow);
+  color: var(--purple);
 }
 .acc-btn strong {
   display: block;
@@ -1289,7 +1317,7 @@ a {
   line-height: 1.3;
   margin-top: 0.1rem;
 }
-/* Plus icon (closed state) */
+/* Plus icon with rounded ends (closed state) */
 .acc-btn::after {
   content: "";
   position: absolute;
@@ -1298,14 +1326,18 @@ a {
   width: 2.5rem;
   height: 2.5rem;
   margin-top: -1.25rem;
-  background:
-    linear-gradient(var(--purple), var(--purple)) center/100% 4px no-repeat,
-    linear-gradient(var(--purple), var(--purple)) center/4px 100% no-repeat;
+  background-color: var(--purple);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18M12 3v18' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18M12 3v18' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
 }
-/* Minus icon (open state: vertical bar removed) */
+/* Minus icon with rounded ends (open state) */
 .acc-btn[aria-expanded="true"]::after {
-  background: linear-gradient(var(--purple), var(--purple)) center/100% 4px
-    no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
 }
 .acc-body {
   background: var(--teal);
