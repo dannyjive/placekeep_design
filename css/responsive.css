@@ -1,0 +1,390 @@
+/* ==========================================================================
+   PLACEKEEP - RESPONSIVE STYLESHEET
+   --------------------------------------------------------------------------
+   Load this AFTER styles.css.
+   Contains responsive overrides and accessibility preferences only.
+   Mobile breakpoint: max-width 820px.
+   ========================================================================== */
+
+/* ==========================================================================
+   ACCESSIBILITY: REDUCED MOTION
+   Turn off smooth scrolling and transitions for people who prefer less motion.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   1. SHARED + HOME: MOBILE (max-width: 820px)
+   Covers the header, hamburger menu, Home page sections, shared panels/cards,
+   and the shared closing footer.
+   ========================================================================== */
+@media (max-width: 820px) {
+  /* --- Header & hamburger menu --- */
+  .site-header {
+    padding: 0.9rem 1.2rem 0;
+    height: 56px;
+  }
+  .logo {
+    font-size: 2rem;
+  }
+  .menu-btn {
+    display: block;
+    margin-top: -0.3rem;
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1.2rem 1rem;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  /* .open is toggled by script.js when the hamburger is clicked */
+  .nav.open {
+    display: flex;
+  }
+  .nav a {
+    padding: 0.7rem 0;
+    font-size: 1rem;
+  }
+
+  /* --- Home: hero --- */
+  .hero {
+    padding: 1.6rem 1.2rem 2rem;
+  }
+  .hero h1 {
+    font-size: 2.35rem;
+    max-width: 21rem;
+    margin-bottom: 1.2rem;
+  }
+  .hero p {
+    margin: 0;
+    max-width: 21rem;
+    font-size: 0.9rem;
+  }
+
+  /* --- Audience split (stacks into one column) --- */
+  .split {
+    display: block;
+    padding: 2rem 1.2rem;
+  }
+  .split > div {
+    padding: 0 0 2rem;
+  }
+  .split > div + div {
+    border-left: 0;
+    padding: 0;
+  }
+  .split h2 {
+    font-size: 1rem;
+  }
+  .split p {
+    font-size: 0.85rem;
+    max-width: 20rem;
+  }
+
+  /* --- Shared panels & cards --- */
+  .panel {
+    width: calc(100% - 2.4rem);
+    max-width: none;
+    border-radius: 0.8rem 0.8rem 0 0;
+  }
+  .panel h2.lead {
+    font-size: 1.5rem;
+    padding-top: 0.4rem;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: calc(100% - 2.8rem);
+    margin: 1.4rem auto 0;
+    transform: none;
+  }
+  .stat {
+    min-height: 0;
+  }
+  .stat .num {
+    font-size: 4.2rem;
+  }
+
+  /* --- Home: gap block, definition, work panel --- */
+  .gap {
+    padding: 2.2rem 1.4rem 2.6rem;
+  }
+  .gap h3 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .gap .quote {
+    font-size: 0.82rem;
+  }
+  .define {
+    margin-top: -2rem;
+    padding: 5.5rem 1.2rem 4.5rem;
+  }
+  .define .wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .define .ipa {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 1.6rem;
+  }
+  .define h2 {
+    text-align: center;
+    font-size: 1.9rem;
+  }
+  .define .note {
+    left: 0;
+    margin: 1.2rem 0 0;
+    max-width: 13rem;
+  }
+  .work {
+    margin-top: -2.5rem;
+  }
+  .proj {
+    min-height: 0;
+  }
+  .proj p {
+    font-size: 0.85rem;
+  }
+  .wrapup {
+    padding: 2.2rem 1.4rem 2.6rem;
+    font-size: 1rem;
+  }
+
+  /* --- Closing footer --- */
+  .closing {
+    padding: 5.5rem 1.2rem 3rem;
+    margin-top: -2rem;
+  }
+  .closing .in {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .closing p {
+    max-width: 20rem;
+  }
+}
+
+/* ==========================================================================
+   2. SHARED: DROPDOWN NAV ON MOBILE (max-width: 820px)
+   ========================================================================== */
+@media (max-width: 820px) {
+  /* Dropdown nav shows inline in the mobile menu */
+  .sub {
+    display: block;
+    position: static;
+    background: none;
+    margin: 0 0 0.3rem 1rem;
+  }
+  .sub a {
+    background: none;
+    color: var(--orange);
+    padding: 0.4rem 0;
+    font-size: 0.95rem;
+  }
+}
+
+/* ==========================================================================
+   3. APPROACH PAGE: MOBILE (max-width: 820px)
+   ========================================================================== */
+@media (max-width: 820px) {
+  /* Intro sections */
+  .intro {
+    padding: 2.2rem 1.2rem 5rem;
+  }
+  .intro.after-band {
+    padding-bottom: 5rem;
+  }
+  .section-title {
+    font-size: 1.7rem;
+  }
+  .intro-inner p {
+    font-size: 1rem;
+  }
+
+  /* Band + panel */
+  .band {
+    background: var(--white);
+  }
+  .band .panel {
+    margin: -3.4rem auto -3rem;
+    padding: 1.6rem 0 2rem;
+  }
+  .after-band {
+    padding-top: 5rem;
+  }
+
+  /* Tabs become a stacked accordion */
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: calc(100% - 2.4rem);
+    margin: 1.2rem auto 0;
+  }
+  .tab {
+    min-height: 4.4rem;
+    justify-content: center;
+  }
+  .tab-panel {
+    padding: 1rem 0.8rem 0.6rem 1rem;
+  }
+  .tab-panel h3 {
+    display: none;
+  }
+  .tab-panel .quote {
+    border-left-width: 1.3rem;
+    padding-left: 1rem;
+    font-size: 0.8rem;
+  }
+  .across {
+    padding: 1.8rem 1rem 0;
+  }
+  .closing .in.wide {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   4. ABOUT PAGE: MOBILE (max-width: 820px)
+   ========================================================================== */
+@media (max-width: 820px) {
+  /* Hero */
+  .hero.solo {
+    padding: 1.6rem 1.2rem 2rem;
+  }
+  .hero.solo h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 1.9rem;
+  }
+
+  /* Mission / Vision */
+  .split.mv > div {
+    padding-bottom: 1.6rem;
+  }
+  .split.mv p {
+    max-width: 20rem;
+    font-size: 0.85rem;
+  }
+
+  /* Cards and testimonials stack into one column */
+  .duo,
+  .quotes {
+    grid-template-columns: 1fr;
+    width: calc(100% - 2.8rem);
+    margin: 1.2rem auto 0;
+  }
+  .panel .sub-lead {
+    font-size: 1.4rem;
+    margin-top: 1.8rem;
+    padding: 0 1rem;
+  }
+  .panel.round {
+    margin-bottom: -3rem;
+    padding-bottom: 2.4rem;
+  }
+  .after-panel {
+    padding-top: 5.5rem;
+  }
+
+  /* Bio stacks: headline, then portrait, then story */
+  .bio {
+    padding: 3rem 1.2rem 6rem;
+  }
+  .bio-grid {
+    display: block;
+  }
+  .bio h2.headline {
+    text-align: center;
+    font-size: 1.45rem;
+    margin: 0 0 1.6rem;
+  }
+  .portrait {
+    max-width: 13rem;
+    margin: 0 0 2rem;
+  }
+  .story h3 {
+    font-size: 1.5rem;
+  }
+  .story p {
+    font-size: 0.86rem;
+  }
+  .quotes blockquote {
+    font-size: 1.4rem;
+  }
+}
+
+/* ==========================================================================
+   5. ABOUT PAGE: FOOTER OVERRIDES (max-width: 820px)
+   ========================================================================== */
+@media (max-width: 820px) {
+  .closing.after-panel-footer {
+    margin-top: 0;
+    padding-top: 5.5rem;
+  }
+}
+
+/* ==========================================================================
+   6. CONTACT PAGE: MOBILE (max-width: 820px)
+   ========================================================================== */
+@media (max-width: 820px) {
+  .c-wrap {
+    padding: 3.2rem 0.9rem 7rem;
+    background: linear-gradient(
+      var(--purple) 0 11rem,
+      var(--white) 11rem calc(100% - 9rem),
+      var(--teal) calc(100% - 9rem)
+    );
+  }
+  .connect {
+    padding: 1.8rem 1.4rem 3rem;
+  }
+  .connect h1 {
+    font-size: 1.7rem;
+    margin-bottom: 2.2rem;
+  }
+  .acc {
+    margin-bottom: 1.8rem;
+  }
+  .acc-btn {
+    padding: 1rem 4.6rem 1rem 0.7rem;
+    min-height: 5.4rem;
+  }
+  .acc-btn strong {
+    font-size: 1.2rem;
+  }
+  .acc-btn span {
+    font-size: 0.85rem;
+  }
+  .acc-btn::after {
+    right: 0.7rem;
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-top: -1.15rem;
+  }
+  .acc-body {
+    padding: 1.4rem 1.4rem 2.2rem;
+  }
+  .field.short input {
+    width: 100%;
+  }
+  .submit {
+    width: 60%;
+  }
+}
