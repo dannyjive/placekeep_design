@@ -1,4 +1,5 @@
 /* ==========================================================================
+/* ==========================================================================
    PLACEKEEP - RESPONSIVE STYLESHEET
    --------------------------------------------------------------------------
    Load this AFTER styles.css.
@@ -19,12 +20,69 @@
   }
 }
 
+/* TABLET: 601px–1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .hero h1 {
+    max-width: 31rem;
+    margin-right: 5%;
+  }
+
+  .hero p {
+    margin-left: 5%;
+    max-width: 21rem;
+  }
+  .gap {
+  padding: 3.6rem 2.6rem 3.6rem 2.6rem;
+}
+
+.gap h3 {
+ /* width: 18rem; */
+}
+
+.gap .quote {
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.define .wrap {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+.define .note {
+  left: -6.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 13rem);
+  justify-content: center;
+  gap: 2rem;
+  width: min(1100px, 92vw);
+  margin: 1.8rem 0 0 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+
+.work .cards {
+  margin-top: 3.6rem;
+  padding-inline: 2rem; /* Space at the outside edges */
+  gap: 1.5rem;           /* Space between the three cards */
+  box-sizing: border-box;
+}
+
+}
 /* ==========================================================================
-   1. SHARED + HOME: MOBILE (max-width: 820px)
-   Covers the header, hamburger menu, Home page sections, shared panels/cards,
-   and the shared closing footer.
+   MOBILE: ALL PAGES (max-width: 600px)
+   Sections are kept in their original order so the cascade is unchanged.
    ========================================================================== */
-@media (max-width: 820px) {
+@media (max-width: 600px) {
+  /* ========================================================================
+     1. SHARED + HOME: MOBILE
+     Covers the header, hamburger menu, Home page sections, shared panels/cards,
+     and the shared closing footer.
+     ======================================================================== */
+
   /* --- Header & hamburger menu --- */
   .site-header {
     padding: 0.9rem 1.2rem 0;
@@ -36,6 +94,7 @@
   .menu-btn {
     display: block;
     margin-top: -0.3rem;
+    padding-right: 0;
   }
   .nav {
     display: none;
@@ -46,15 +105,19 @@
     background: var(--white);
     flex-direction: column;
     gap: 0;
-    padding: 0.5rem 1.2rem 1rem;
+    /* padding: 0.5rem 1.2rem 1rem; */
+    padding: 0.5rem 0 1rem;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    z-index: -1;
   }
   /* .open is toggled by script.js when the hamburger is clicked */
   .nav.open {
     display: flex;
   }
   .nav a {
-    padding: 0.7rem 0;
+    /* padding: 0.7rem 0;
+    font-size: 1rem; */
+    padding: 0.7rem 1.2rem; /* was 0.7rem 0 */
     font-size: 1rem;
   }
 
@@ -66,6 +129,7 @@
     font-size: 2.35rem;
     max-width: 21rem;
     margin-bottom: 1.2rem;
+    margin-right: 0;
   }
   .hero p {
     margin: 0;
@@ -76,7 +140,7 @@
   /* --- Audience split (stacks into one column) --- */
   .split {
     display: block;
-    padding: 2rem 1.2rem;
+    padding: 2rem 1.2rem 4rem;
   }
   .split > div {
     padding: 0 0 2rem;
@@ -97,68 +161,96 @@
   .panel {
     width: calc(100% - 2.4rem);
     max-width: none;
-    border-radius: 0.8rem 0.8rem 0 0;
+    border-radius: 0.8rem;
+    padding: 2rem 1.2rem;
   }
   .panel h2.lead {
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding-top: 0.4rem;
   }
   .cards {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr; /* one card per row; overrides the desktop 3 columns */
+    justify-items: center;
+    grid-auto-rows: 1fr; /* every row matches the tallest card */
     gap: 1.6rem;
     width: calc(100% - 2.8rem);
     margin: 1.4rem auto 0;
     transform: none;
   }
+  .card {
+    padding: 2rem;
+  }
   .stat {
+    width: 100%;
     min-height: 0;
   }
+  .stat p {
+    font-size: 1.1rem;
+  }
   .stat .num {
-    font-size: 4.2rem;
+    font-size: 6.2rem;
+  }
+
+  .stat small {
+    font-size: 0.8rem;
   }
 
   /* --- Home: gap block, definition, work panel --- */
   .gap {
-    padding: 2.2rem 1.4rem 2.6rem;
+    padding: 2.2rem 1rem 2.6rem;
   }
   .gap h3 {
     text-align: center;
     font-size: 1.5rem;
   }
   .gap .quote {
-    font-size: 0.82rem;
+    font-size: 1rem;
+    width: auto;
+  }
+  .quote p {
+    width: 19rem;
+  }
+  .gap .quote p {
+    width: auto; /* was 17rem; let the text fill the space available */
+    max-width: 17rem; /* keep it from getting too wide on bigger phones */
   }
   .define {
     margin-top: -2rem;
-    padding: 5.5rem 1.2rem 4.5rem;
+    padding: 9.5rem 1.2rem 10.5rem;
   }
   .define .wrap {
     display: flex;
     flex-direction: column;
   }
   .define .ipa {
-    text-align: center;
-    font-size: 1.3rem;
-    margin-bottom: 1.6rem;
+    text-align: right;
+    font-size: 1.9rem;
+    margin: 0 1rem 1.6rem 0;
   }
   .define h2 {
-    text-align: center;
+    text-align: right;
     font-size: 1.9rem;
+    margin: 0 1rem 2.5rem auto;
   }
   .define .note {
     left: 0;
     margin: 1.2rem 0 0;
-    max-width: 13rem;
+    max-width: 20rem;
+    font-size: 1.5rem;
   }
   .work {
     margin-top: -2.5rem;
   }
   .proj {
     min-height: 0;
+    width: 100%;
+  }
+  .proj h3 {
+    font-size: 2.5rem;
   }
   .proj p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
   .wrapup {
     padding: 2.2rem 1.4rem 2.6rem;
@@ -171,44 +263,64 @@
     margin-top: -2rem;
   }
   .closing .in {
+    height: auto;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 1.5rem;
   }
+
   .closing p {
     max-width: 20rem;
   }
-}
 
-/* ==========================================================================
-   2. SHARED: DROPDOWN NAV ON MOBILE (max-width: 820px)
-   ========================================================================== */
-@media (max-width: 820px) {
-  /* Dropdown nav shows inline in the mobile menu */
+  /* ========================================================================
+     2. SHARED: DROPDOWN NAV ON MOBILE
+     ======================================================================== */
   .sub {
     display: block;
     position: static;
     background: none;
-    margin: 0 0 0.3rem 1rem;
+    margin: 0 0 0.3rem 0;
   }
   .sub a {
     background: none;
     color: var(--orange);
-    padding: 0.4rem 0;
+    padding: 0.4rem 1.2rem 0.4rem 2.2rem; /* extra left padding indents the submenu */
     font-size: 0.95rem;
   }
-}
 
-/* ==========================================================================
-   3. APPROACH PAGE: MOBILE (max-width: 820px)
-   ========================================================================== */
-@media (max-width: 820px) {
+  /* Orange background + white text on press and keyboard focus */
+  .nav a:active,
+  .nav a:focus-visible,
+  .nav .sub a:active,
+  .nav .sub a:focus-visible {
+    background: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+    outline: none;
+  }
+
+  /* Mouse hover, only on devices that have a mouse */
+  @media (hover: hover) {
+    .nav a:hover,
+    .nav .sub a:hover {
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+    }
+  }
+
+  /* ========================================================================
+     3. APPROACH PAGE: MOBILE
+     ======================================================================== */
+
   /* Intro sections */
   .intro {
-    padding: 2.2rem 1.2rem 5rem;
+    padding: 3.2rem 1.2rem 6rem;
   }
   .intro.after-band {
-    padding-bottom: 5rem;
+    padding: 8rem 2rem;
   }
   .section-title {
     font-size: 1.7rem;
@@ -223,7 +335,7 @@
   }
   .band .panel {
     margin: -3.4rem auto -3rem;
-    padding: 1.6rem 0 2rem;
+    padding: 1.6rem 0 3.5rem;
   }
   .after-band {
     padding-top: 5rem;
@@ -238,11 +350,13 @@
     margin: 1.2rem auto 0;
   }
   .tab {
-    min-height: 4.4rem;
+    --tab-h: 5rem; /* mobile-only height, smaller than desktop */
+    min-height: var(--tab-h);
+    padding: 1rem; /* or calc(var(--tab-h) / 2) if you want the text at the halfway mark */
     justify-content: center;
   }
   .tab-panel {
-    padding: 1rem 0.8rem 0.6rem 1rem;
+    padding: 1rem 0.8rem 0.6rem 0;
   }
   .tab-panel h3 {
     display: none;
@@ -258,25 +372,34 @@
   .closing .in.wide {
     flex-direction: column;
   }
-}
 
-/* ==========================================================================
-   4. ABOUT PAGE: MOBILE (max-width: 820px)
-   ========================================================================== */
-@media (max-width: 820px) {
+  /* ========================================================================
+     4. ABOUT PAGE: MOBILE
+     ======================================================================== */
+
   /* Hero */
   .hero.solo {
     padding: 1.6rem 1.2rem 2rem;
   }
   .hero.solo h1 {
-    text-align: center;
-    margin: 0;
+    text-align: right;
+    margin: 0 0 0 auto;
     font-size: 1.9rem;
+    max-width: 20rem;
   }
 
   /* Mission / Vision */
   .split.mv > div {
     padding-bottom: 1.6rem;
+  }
+  /* Short orange bar between Mission and Vision */
+  .split.mv > div + div::before {
+    content: "";
+    display: block;
+    width: 10rem; /* bar length */
+    height: 3px; /* bar thickness */
+    background: var(--orange);
+    margin: 0 auto 1.6rem; /* centered, with space below it */
   }
   .split.mv p {
     max-width: 20rem;
@@ -290,6 +413,9 @@
     width: calc(100% - 2.8rem);
     margin: 1.2rem auto 0;
   }
+  .quotes figure {
+    padding: 2rem 1rem 2rem 1rem;
+  }
   .panel .sub-lead {
     font-size: 1.4rem;
     margin-top: 1.8rem;
@@ -297,7 +423,7 @@
   }
   .panel.round {
     margin-bottom: -3rem;
-    padding-bottom: 2.4rem;
+    padding-bottom: 4.4rem;
   }
   .after-panel {
     padding-top: 5.5rem;
@@ -308,42 +434,77 @@
     padding: 3rem 1.2rem 6rem;
   }
   .bio-grid {
-    display: block;
+    display: flex; /* was block */
+    flex-direction: column;
   }
   .bio h2.headline {
     text-align: center;
     font-size: 1.45rem;
-    margin: 0 0 1.6rem;
+    margin: 3rem auto 3rem;
+    width: 80%;
   }
   .portrait {
-    max-width: 13rem;
-    margin: 0 0 2rem;
+    display: contents; /* photo, caption and social cards become direct items of .bio-grid */
+  }
+  .story {
+    padding-left: 10%;
   }
   .story h3 {
     font-size: 1.5rem;
   }
   .story p {
     font-size: 0.86rem;
+    width: 90%;
   }
   .quotes blockquote {
     font-size: 1.4rem;
   }
-}
+  /* Order: headline, photo, caption, story, then social */
+  .bio h2.headline {
+    order: 1;
+  }
+  .photo {
+    order: 2;
+  }
+  .caption {
+    order: 3;
+  }
+  .story {
+    order: 4;
+    margin-bottom: 2rem;
+  }
+  .portrait h3 {
+    order: 5;
+  }
+  .social {
+    order: 6;
+  }
 
-/* ==========================================================================
-   5. ABOUT PAGE: FOOTER OVERRIDES (max-width: 820px)
-   ========================================================================== */
-@media (max-width: 820px) {
+  /* Sizing, since .portrait's own max-width no longer applies */
+  .photo,
+  .caption,
+  .social,
+  .portrait h3 {
+    width: 100%;
+    max-width: 18rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .caption {
+    margin-bottom: 2.5rem;
+  }
+
+  /* ========================================================================
+     5. ABOUT PAGE: FOOTER OVERRIDES
+     ======================================================================== */
   .closing.after-panel-footer {
     margin-top: 0;
     padding-top: 5.5rem;
   }
-}
 
-/* ==========================================================================
-   6. CONTACT PAGE: MOBILE (max-width: 820px)
-   ========================================================================== */
-@media (max-width: 820px) {
+  /* ========================================================================
+     6. CONTACT PAGE: MOBILE
+     ======================================================================== */
   .c-wrap {
     padding: 3.2rem 0.9rem 7rem;
     background: linear-gradient(
