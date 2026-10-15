@@ -615,7 +615,7 @@ nav a.active {
   background-color: var(--teal);
 }
 .tab:hover:not([aria-selected="true"]) {
-  background: #235a54;
+  background: var(--teal);
 }
 .tab[aria-selected="true"]:active {
   background: var(--yellow);

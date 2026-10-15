@@ -35,10 +35,6 @@
   padding: 3.6rem 2.6rem 3.6rem 2.6rem;
 }
 
-.gap h3 {
- /* width: 18rem; */
-}
-
 .gap .quote {
   width: auto;
   max-width: 100%;
@@ -69,6 +65,50 @@
   padding-inline: 2rem; /* Space at the outside edges */
   gap: 1.5rem;           /* Space between the three cards */
   box-sizing: border-box;
+}
+
+.tabs {
+  width: calc(100% + 19rem);
+  margin: 1.3rem 0 0 -9.5rem;
+}
+.tab-panel {
+  padding: 1.2rem 11rem 0 11rem;
+}
+/* ABOUT PAGE*/
+.hero.solo h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+  max-width: 30rem;
+  margin: 0 6% 0 auto;
+}
+
+.quotes {
+  width: calc(100% + 20rem);
+  margin: 2.6rem 0 0 -10rem;
+}
+
+.acc-btn {
+  padding: 1.35rem 5rem 1.2rem 2rem;
+}
+.acc-body {
+  background: var(--teal);
+  padding: 1.8rem 2rem 3rem;
+}
+/* CONTACT PAGE */
+.connect {
+  margin: 0 4rem;
+  padding: 4rem 3rem 4rem;
+}
+.acc {
+  margin-bottom: 4rem;
+}
+.c-wrap {
+  padding: 6rem 0rem 7rem;
+background: linear-gradient(
+  var(--purple) 0 14rem,
+  var(--white) 14rem calc(100% - 20rem),
+  var(--teal) calc(100% - 22rem) 100%
+);
+  min-height: calc(100vh - 56px);
 }
 
 }
@@ -505,26 +545,27 @@
   /* ========================================================================
      6. CONTACT PAGE: MOBILE
      ======================================================================== */
-  .c-wrap {
-    padding: 3.2rem 0.9rem 7rem;
-    background: linear-gradient(
-      var(--purple) 0 11rem,
-      var(--white) 11rem calc(100% - 9rem),
-      var(--teal) calc(100% - 9rem)
-    );
-  }
+.c-wrap {
+  padding: 6rem 0.9rem 7rem;
+background: linear-gradient(
+  var(--purple) 0 14rem,
+  var(--white) 14rem calc(100% - 14rem),
+  var(--teal) calc(100% - 15rem) 100%
+);
+  min-height: calc(100vh - 56px);
+}
   .connect {
-    padding: 1.8rem 1.4rem 3rem;
+    padding: 4rem 1.4rem 5rem;
   }
   .connect h1 {
     font-size: 1.7rem;
     margin-bottom: 2.2rem;
   }
   .acc {
-    margin-bottom: 1.8rem;
+    margin-bottom: 3rem;
   }
   .acc-btn {
-    padding: 1rem 4.6rem 1rem 0.7rem;
+    padding: 1rem 4.6rem 1rem 1rem;
     min-height: 5.4rem;
   }
   .acc-btn strong {
@@ -542,6 +583,7 @@
   .acc-body {
     padding: 1.4rem 1.4rem 2.2rem;
   }
+
   .field.short input {
     width: 100%;
   }
