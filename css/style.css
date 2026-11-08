@@ -47,6 +47,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;   /* keeps the layout the same with or without a scrollbar */
   overflow-y: scroll;         /* fallback for browsers that don't support scrollbar-gutter */
+  scroll-padding-top: 56px; 
 }
 body {
   font-family: var(--font);
@@ -80,11 +81,11 @@ a {
   align-items: flex-start;
   padding: 0.9rem 3.5rem 0;
   height: 56px;
-  position: relative;
+  position: sticky;   /* was: relative */
+  top: 0;             /* new */
   z-index: 5;
-   padding: 0.9rem var(--gutter) 0;
+  padding: 0.9rem var(--gutter) 0;
 }
-
 /* Old text-based logo (kept for reference, replaced by the image logo below) */
 /* .logo {
   font-family: "Oswald", var(--font);
@@ -611,8 +612,13 @@ nav a.active {
   background: var(--yellow);
   color: var(--teal);
 }
+/* Minus icon for the selected tab (open state) */
 .tab[aria-selected="true"]::after {
   background-color: var(--teal);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
 }
 .tab:hover:not([aria-selected="true"]) {
   background: var(--teal);
@@ -799,13 +805,16 @@ nav a.active {
   grid-area: side;
 }
 .photo {
-  aspect-ratio: 3/4;
+  grid-area: auto;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
   background: linear-gradient(160deg, #2c3f3c, #142b28);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
 }
+
 .photo svg {
   width: 80%;
   height: auto;
@@ -838,16 +847,25 @@ nav a.active {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   font-size: 0.62rem;
   line-height: 1.25;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
+
+.social:hover {
+  background: var(--yellow);
+  transform: translateY(-2px);
+  transition: 0.2s ease;
+}
+
 .social strong {
   display: block;
   font-size: 0.66rem;
 }
+
 .avatar {
   width: 2.1rem;
   height: 2.1rem;
   border-radius: 50%;
-  background: #cfc8bb;
+  background: var(--white);;
   flex: none;
   display: grid;
   place-items: center;
@@ -855,11 +873,17 @@ nav a.active {
   font-size: 0.62rem;
   color: var(--white);
 }
+
 .avatar.brand {
-  background: var(--purple);
+  background: var(--white);
   border-radius: 0.4rem;
 }
-
+.badge {
+  display: block;
+  width: 80%;        /* Adjust badge size */
+  height: auto;
+  margin: 1.5rem auto 0;
+}
 /* Story column: Her Story / Recognition / Track Record */
 .story {
   grid-area: story;
