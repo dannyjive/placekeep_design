@@ -1093,6 +1093,8 @@ nav a.active {
   width: 65%;
 }
 
+.hp { position: absolute; left: -9999px; }
+
 /* --- Submit button and status message --- */
 .submit {
   display: block;
