@@ -418,6 +418,7 @@ background: linear-gradient(
      ======================================================================== */
 
   /* Hero */
+  /* Hero */
   .hero.solo {
     padding: 1.6rem 1.2rem 2rem;
   }
@@ -426,6 +427,9 @@ background: linear-gradient(
     margin: 0 0 0 auto;
     font-size: 1.9rem;
     max-width: 20rem;
+  }
+  .keep {
+    white-space: normal; /* lets "dignity and belonging." wrap on mobile */
   }
 
   /* Mission / Vision */
@@ -519,9 +523,14 @@ background: linear-gradient(
   .social {
     order: 6;
   }
-   .badge {
+     .badge-link {
     order: 7;
+    display: block;
+    width: 60%;
+    max-width: 12rem;
+    margin: 1.5rem auto 0;
   }
+  
 
   /* Sizing, since .portrait's own max-width no longer applies */
   .photo,
@@ -533,10 +542,9 @@ background: linear-gradient(
     margin-left: auto;
     margin-right: auto;
   }
-    .badge {
-    width: 60%;
-    max-width: 12rem;
-    margin: 1.5rem auto 0;
+  .badge {
+    width: 100%;
+    margin: 0;
   }
   .caption {
     margin-bottom: 2.5rem;
