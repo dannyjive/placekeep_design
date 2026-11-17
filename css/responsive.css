@@ -123,10 +123,21 @@ background: linear-gradient(
      and the shared closing footer.
      ======================================================================== */
 
+/* replace the existing focus/press block */
+.nav a:active,
+.nav a:focus-visible,
+.nav .sub a:active,
+.nav .sub a:focus-visible {
+  background: var(--purple);
+  color: var(--white);
+  text-decoration: none;
+}
+
   /* --- Header & hamburger menu --- */
   .site-header {
     padding: 0.9rem 1.2rem 0;
-    height: 56px;
+    .site-header { min-height: 56px; }     /* was height; also in the 600px block */
+.closing .in { min-height: 8rem; }     /* was height */
   }
   .logo {
     font-size: 2rem;
@@ -330,16 +341,7 @@ background: linear-gradient(
     font-size: 0.95rem;
   }
 
-  /* Orange background + white text on press and keyboard focus */
-  .nav a:active,
-  .nav a:focus-visible,
-  .nav .sub a:active,
-  .nav .sub a:focus-visible {
-    background: var(--orange);
-    color: var(--white);
-    text-decoration: none;
-    outline: none;
-  }
+
 
   /* Mouse hover, only on devices that have a mouse */
   @media (hover: hover) {

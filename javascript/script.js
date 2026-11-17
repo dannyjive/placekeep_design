@@ -11,35 +11,29 @@ nav.addEventListener("click", (e) => {
   }
 });
 
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && nav.classList.contains("open")) {
+    nav.classList.remove("open");
+    btn.setAttribute("aria-expanded", false);
+    btn.focus();
+  }
+});
+
 /* Tabs on desktop, accordion on mobile (Approach page) */
-const mobile = window.matchMedia("(max-width: 820px)");
+/* Approach page: expandable sections (grid on desktop, stacked on mobile) */
 document.querySelectorAll(".tabs").forEach((group) => {
   const tabs = [...group.querySelectorAll(".tab")];
-  const select = (tab, open) => {
-    tabs.forEach((t) => {
-      const on = t === tab && open;
-      t.setAttribute("aria-selected", on);
-      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
-    });
+
+  const setOpen = (tab, open) => {
+    tab.setAttribute("aria-expanded", open);
+    document.getElementById(tab.getAttribute("aria-controls")).hidden = !open;
   };
-  tabs.forEach((tab, i) => {
+
+  tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-      const isOpen = tab.getAttribute("aria-selected") === "true";
-      select(tab, mobile.matches ? !isOpen : true);
-    });
-    tab.addEventListener("keydown", (e) => {
-      const d =
-        e.key === "ArrowRight" || e.key === "ArrowDown"
-          ? 1
-          : e.key === "ArrowLeft" || e.key === "ArrowUp"
-            ? -1
-            : 0;
-      if (d && !mobile.matches) {
-        e.preventDefault();
-        const n = tabs[(i + d + tabs.length) % tabs.length];
-        n.focus();
-        select(n, true);
-      }
+      const wasOpen = tab.getAttribute("aria-expanded") === "true";
+      tabs.forEach((t) => setOpen(t, false)); // one open at a time
+      setOpen(tab, !wasOpen);                 // click an open one to close it
     });
   });
 });

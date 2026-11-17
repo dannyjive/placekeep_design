@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <a class="skip" href="#main">Skip to main content</a>
 
     <header class="site-header">
         <a href="./index.html">
@@ -38,7 +39,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
         <section class="intro" id="project-owners">
             <div class="intro-inner">
                 <h1 class="section-title">For Organizations</h1>
@@ -58,10 +59,12 @@
         <div class="band">
             <section class="panel" aria-labelledby="six-h">
                 <h2 class="lead" id="six-h">Six ways we partner with you:</h2>
-                <div class="tabs six" role="tablist" aria-label="Ways we partner with project owners">
-                    <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true"
-                        style="--c:1;--r:1"><small>01</small>Before the Building</button>
-                    <div class="tab-panel" role="tabpanel" id="p1" aria-labelledby="t1">
+                <div class="tabs six" role="group" aria-label="Ways we partner with project owners">
+
+                    <button class="tab" id="t1" aria-controls="p1" aria-expanded="true" style="--c:1;--r:1">
+                        <small aria-hidden="true">01</small>Before the Building
+                    </button>
+                    <div class="tab-panel" id="p1">
                         <h3>Before the Building:</h3>
                         <div class="quote">
                             <p>Most projects start long before anyone agrees on what the project actually is.</p>
@@ -76,20 +79,20 @@
                         </div>
                     </div>
 
-                    <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false"
-                        style="--c:2;--r:1"><small>02</small>Community Engagement &amp; Facilitation</button>
-                    <div class="tab-panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+                    <button class="tab" id="t2" aria-controls="p2" aria-expanded="false"
+                        style="--c:2;--r:1"><small aria-hidden="true">02</small>Community Engagement &amp; Facilitation</button>
+                    <div class="tab-panel" id="p2" hidden>
                         <h3>Community Engagement &amp; Facilitation:</h3>
                         <div class="quote">
                             <p>We design an engagement process that fits your organization and timeline.</p>
-                            <p><strong>Meeting & Workshop Facilitation:</strong> We run focus groups, Council workshops,
+                            <p><strong>Meeting &amp; Workshop Facilitation:</strong> We run focus groups, Council workshops,
                                 and public meetings so every voice gets heard.</p>
                             <p><strong>Research:</strong> We dig into the context, comparable projects, funding
                                 precedent, and community history that make your story credible to community, funders and
                                 decision-makers.</p>
                             <p><strong>Translating Input into Vision:</strong> We turn what we hear into a clear,
                                 board-ready direction.</p>
-                            <p><strong>Graphic & Presentation Support:</strong> We build the visuals that carry that
+                            <p><strong>Graphic &amp; Presentation Support:</strong> We build the visuals that carry that
                                 vision into board meetings and fundraising events.</p>
                             <p><strong>Connections:</strong> We connect you to the consultants a project needs as it
                                 grows.</p>
@@ -97,19 +100,19 @@
                         </div>
                     </div>
 
-                    <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false"
-                        style="--c:3;--r:1"><small>03</small>Project &amp; Capital Planning</button>
-                    <div class="tab-panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+                    <button class="tab" id="t3" aria-controls="p3" aria-expanded="false"
+                        style="--c:3;--r:1"><small aria-hidden="true">03</small>Project &amp; Capital Planning</button>
+                    <div class="tab-panel" id="p3" hidden>
                         <h3>Project &amp; Capital Planning:</h3>
                         <div class="quote">
                             <p>We build the feasibility case that tells you what's possible, and what it will take to
                                 get there.</p>
-                            <p><strong>Site Review & Feasibility Reports:</strong> We evaluate sites and produce the
+                            <p><strong>Site Review &amp; Feasibility Reports:</strong> We evaluate sites and produce the
                                 feasibility case boards and funders need, including how much space you need and for
                                 what.</p>
-                            <p><strong>Land Use & Regulatory Coordination:</strong> We navigate the overlapping
+                            <p><strong>Land Use &amp; Regulatory Coordination:</strong> We navigate the overlapping
                                 approvals across Tribal, public, and multi-agency review.</p>
-                            <p><strong>Cost & Timeline Planning:</strong> We work with cost and scheduling partners to
+                            <p><strong>Cost &amp; Timeline Planning:</strong> We work with cost and scheduling partners to
                                 set a realistic budget and timeline before design begins.</p>
                             <p><strong>Grant Support:</strong> We support grant writing with the content and budget
                                 figures each application needs.</p>
@@ -117,12 +120,12 @@
                         </div>
                     </div>
 
-                    <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false"
-                        style="--c:1;--r:2"><small>04</small>Design</button>
-                    <div class="tab-panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+                    <button class="tab" id="t4" aria-controls="p4" aria-expanded="false"
+                        style="--c:1;--r:2"><small aria-hidden="true">04</small>Design</button>
+                    <div class="tab-panel" id="p4" hidden>
                         <h3>Design:</h3>
                         <div class="quote">
-                            <p>We develop the core concept alongside you, tied your people, place, and mission, that
+                            <p>We develop the core concept alongside you, tied to your people, place, and mission, that
                                 carries a design to completion.</p>
                             <p><strong>Concept Renderings:</strong> We translate community consensus into renderings
                                 that build support and leave room to adjust as the design develops.</p>
@@ -135,16 +138,16 @@
                         </div>
                     </div>
 
-                    <button class="tab" role="tab" id="t5" aria-controls="p5" aria-selected="false"
-                        style="--c:2;--r:2"><small>05</small>Governance Timing</button>
-                    <div class="tab-panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden>
+                    <button class="tab" id="t5" aria-controls="p5" aria-expanded="false"
+                        style="--c:2;--r:2"><small aria-hidden="true">05</small>Governance Timing</button>
+                    <div class="tab-panel" id="p5" hidden>
                         <h3>Governance Timing:</h3>
                         <div class="quote">
                             <p>We build the case that carries your project through the approval bodies that need to say
                                 yes.</p>
                             <p><strong>Timing Reality Check:</strong> We map out how long institutional approval
                                 actually takes, so the schedule reflects reality.</p>
-                            <p><strong>Board & Council Presentation:</strong> We prepare and present directly to the
+                            <p><strong>Board &amp; Council Presentation:</strong> We prepare and present directly to the
                                 decision-making bodies that need to say yes.</p>
                             <p><strong>Continuity Through Transitions:</strong> We stay the throughline through staff
                                 changes, board turnover, and multi-year approvals.</p>
@@ -152,9 +155,9 @@
                         </div>
                     </div>
 
-                    <button class="tab" role="tab" id="t6" aria-controls="p6" aria-selected="false"
-                        style="--c:3;--r:2"><small>06</small>Long-Term Partnership</button>
-                    <div class="tab-panel" role="tabpanel" id="p6" aria-labelledby="t6" hidden>
+                    <button class="tab" id="t6" aria-controls="p6" aria-expanded="false"
+                        style="--c:3;--r:2"><small aria-hidden="true">06</small>Long-Term Partnership</button>
+                    <div class="tab-panel" id="p6" hidden>
                         <h3>Long-Term Partnership:</h3>
                         <div class="quote">
                             <p>We stay in the relationship after the project is done.</p>
@@ -189,75 +192,56 @@
         <div class="band">
             <section class="panel" aria-labelledby="three-h">
                 <h2 class="lead" id="three-h">Three ways to bring us in:</h2>
-                <div class="tabs three" role="tablist" aria-label="Ways to bring Placekeep in">
-                    <button class="tab" role="tab" id="r1" aria-controls="q1" aria-selected="true"
-                        style="--c:1;--r:1"><small>Tier 1</small>Grounding</button>
-                    <div class="tab-panel" role="tabpanel" id="q1" aria-labelledby="r1">
-                        <h3>Grounding:</h3>
-                        <div class="quote">
-                            <p>For firms that don't have community engagement in-house, or don't want to build it out
-                                for one project.</p>
-                            <p><strong>Engagement &amp; Research:</strong> We handle early and stakeholder engagement,
-                                cultural research, site and context analysis, and facilitation.</p>
-                            <p><strong>Live Handoff:</strong> We deliver findings in a live working session on a shared
-                                board that stays open as a reference for the rest of the project.</p>
-                            <p><strong>You Design From It:</strong> Your team designs from what we found.</p>
-                        </div>
-                    </div>
+<div class="tabs three" role="group" aria-label="Ways to bring Placekeep in">
 
-                    <button class="tab" role="tab" id="r2" aria-controls="q2" aria-selected="false"
-                        style="--c:2;--r:1"><small>Tier 2</small>Framing</button>
-                    <div class="tab-panel" role="tabpanel" id="q2" aria-labelledby="r2" hidden>
-                        <h3>Framing:</h3>
-                        <div class="quote">
-                            <p>For firms that want cultural intelligence baked into the program before anyone starts
-                                sketching.</p>
+  <button class="tab" id="r1" aria-controls="q1" aria-expanded="true"
+          style="--c:1;--r:1">
+    <small>Tier 1</small>Grounding
+  </button>
+  <div class="tab-panel" id="q1">
+    <h3>Grounding:</h3>
+    <div class="quote">
+      <p>For firms that don't have community engagement in-house, or don't want to build it out for one project.</p>
+      <p><strong>Engagement &amp; Research:</strong> We handle early and stakeholder engagement, cultural research, site and context analysis, and facilitation.</p>
+      <p><strong>Live Handoff:</strong> We deliver findings in a live working session on a shared board that stays open as a reference for the rest of the project.</p>
+      <p><strong>You Design From It:</strong> Your team designs from what we found.</p>
+    </div>
+  </div>
 
-                            <p>
-                                <strong>Findings Into Priorities:</strong> We translate Tier 1 findings into spatial
-                                priorities,
-                                sightlines, adjacency driven by cultural practice, entry sequence, indoor-outdoor
-                                relationship, mission-alignment criteria, and material significance.
-                            </p>
+  <button class="tab" id="r2" aria-controls="q2" aria-expanded="false"
+          style="--c:2;--r:1">
+    <small>Tier 2</small>Framing
+  </button>
+  <div class="tab-panel" id="q2" hidden>
+    <h3>Framing:</h3>
+    <div class="quote">
+      <p>For firms that want cultural intelligence baked into the program before anyone starts sketching.</p>
+      <p><strong>Findings Into Priorities:</strong> We translate Tier 1 findings into spatial priorities, sightlines, adjacency driven by cultural practice, entry sequence, indoor-outdoor relationship, mission-alignment criteria, and material significance.</p>
+      <p><strong>Same Shared Board:</strong> It builds on the same shared board from Tier 1.</p>
+      <p><strong>Feeds Your Programming:</strong> It feeds directly into your team's own programming process.</p>
+    </div>
+  </div>
 
-                            <p>
-                                <strong>Same Shared Board:</strong> It builds on the same shared board from Tier 1.
-                            </p>
+  <button class="tab" id="r3" aria-controls="q3" aria-expanded="false"
+          style="--c:3;--r:1">
+    <small>Tier 3</small>Embedding
+  </button>
+  <div class="tab-panel" id="q3" hidden>
+    <h3>Embedding:</h3>
+    <div class="quote">
+      <p>For firms that want us embedded through concept development, working directly alongside your team.</p>
+      <p><strong>Co-Developing Massing &amp; Site Organization:</strong> We work with your team through to a preferred direction on massing studies and site organization.</p>
+      <p><strong>Checked Against Community Input:</strong> Every call gets checked against what the community told us in Tiers 1 and 2.</p>
+      <p><strong>Subconsultant Role:</strong> We come in as a subconsultant, your firm maintains the lead throughout.</p>
+    </div>
+  </div>
 
-                            <p>
-                                <strong>Feeds Your Programming:</strong> It feeds directly into your team's own
-                                programming process.
-                            </p>
-                        </div>
-                    </div>
+</div>
 
-                    <button class="tab" role="tab" id="r3" aria-controls="q3" aria-selected="false"
-                        style="--c:3;--r:1"><small>Tier 3</small>Embedding</button>
-                    <div class="tab-panel" role="tabpanel" id="q3" aria-labelledby="r3" hidden>
-                        <h3>Embedding:</h3>
-                        <div class="quote">
-                            <p>For firms that want us embedded through concept development, working directly alongside
-                                your team.</p>
-                            <p>
-                                <strong>Co-Developing Massing & Site Organization:</strong> We work with your team
-                                through to a preferred direction on massing studies and site organization.
-                            </p>
-                            <p>
-                                <strong>Checked Against Community Input:</strong> Every call gets checked against what
-                                the community told us in Tiers 1 and 2.
-                            </p>
-                            <p>
-                                <strong>Subconsultant Role:</strong> We come in as a subconsultant, your firm maintains
-                                the lead throughout.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="across">
-                    <h3>Across All Three Tiers:</h3>
-                    <p class="tiersText">You keep access to the original community context as questions come up during production.</p>
-                </div>
-            </section>
+<div class="across">
+  <h3>Across All Three Tiers:</h3>
+  <p class="tiersText">You keep access to the original community context as questions come up during production.</p>
+</div>            </section>
         </div>
     </main>
 

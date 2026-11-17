@@ -17,7 +17,7 @@
 </head>
 
 <body>
-
+<a class="skip" href="#main">Skip to main content</a>
   <header class="site-header">
     <a href="./index.html">
       <img class="logo" src="./img/Placekeep_Logo_Orange.png" alt="Placekeep home">
@@ -37,7 +37,7 @@
     </nav>
   </header>
 
-  <main class="c-wrap">
+  <main id="main" tabindex="-1" class="c-wrap">
     <div class="connect">
       <h1>Let’s Keep Talking</h1>
 
@@ -45,15 +45,15 @@
       <section class="acc">
         <button class="acc-btn" id="b1" aria-expanded="false" aria-controls="f1"><strong>I don't know where to
             start!</strong><span>You have a need, but haven't shaped it into a project yet</span></button>
-        <div class="acc-body" id="f1" role="region" aria-labelledby="b1" hidden>
+        <div class="acc-body" id="f1" hidden>
           <form action="send.php" method="post">
             <input type="hidden" name="inquiry_type" value="I don't know where to start">
             <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <p class="hint">Just tell me what’s going on. No pressure to have this figured out yet.</p>
-            <div class="field"><label for="f1-msg">What’s going on?</label><textarea id="f1-msg" name="message" required
+            <p class="hint" id="f1-hint">Just tell me what’s going on. No pressure to have this figured out yet.</p>
+            <div class="field"><label for="f1-msg">What’s going on?</label><textarea id="f1-msg" name="message" required aria-describedby="f1-hint"
                 placeholder="Whatever you’ve got, even if it’s rough."></textarea></div>
             <div class="field short"><label for="f1-email">Email address</label><input id="f1-email" type="email"
-                name="email" required placeholder="you@organization.org"></div>
+                name="email" required autocomplete="email" placeholder="you@organization.org"></div>
             <button class="submit" type="submit">Submit</button>
             <p class="status" role="status" aria-live="polite"></p>
           </form>
@@ -63,19 +63,19 @@
       <section class="acc">
         <button class="acc-btn" id="b2" aria-expanded="false" aria-controls="f2"><strong>I’ve got a project
             opportunity</strong><span>You have a project or opportunity in mind</span></button>
-        <div class="acc-body" id="f2" role="region" aria-labelledby="b2" hidden>
+        <div class="acc-body" id="f2" hidden>
           <form action="send.php" method="post">
             <input type="hidden" name="inquiry_type" value="Project opportunity">
             <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <p class="hint">Enough for me to understand the shape of the opportunity before we talk.</p>
+            <p class="hint" id="f2-hint">Enough for me to understand the shape of the opportunity before we talk.</p>
             <div class="field short"><label for="f2-name">Name</label><input id="f2-name" name="name" required
                 placeholder="Your name" autocomplete="name"></div>
             <div class="field short"><label for="f2-org">Organization</label><input id="f2-org" name="organization"
                 placeholder="Organization name" autocomplete="organization"></div>
-            <div class="field"><label for="f2-msg">Briefly, what’s the opportunity</label><textarea id="f2-msg"
+            <div class="field"><label for="f2-msg">Briefly, what’s the opportunity</label><textarea id="f2-msg" aria-describedby="f2-hint"
                 name="message" required
                 placeholder="A few sentences on the project or partnership, timeline if you have one."></textarea></div>
-            <div class="field short"><label for="f2-email">Email address</label><input id="f2-email" type="email"
+            <div class="field short"><label for="f2-email">Email address</label><input id="f2-email" type="email" autocomplete="email"
                 name="email" required placeholder="you@organization.org"></div>
             <button class="submit" type="submit">Submit</button>
             <p class="status" role="status" aria-live="polite"></p>
@@ -86,15 +86,15 @@
       <section class="acc">
         <button class="acc-btn" id="b3" aria-expanded="false" aria-controls="f3"><strong>I want to
             connect</strong><span>Networking and general outreach</span></button>
-        <div class="acc-body" id="f3" role="region" aria-labelledby="b3" hidden>
+        <div class="acc-body" id="f3" hidden>
           <form action="send.php" method="post">
             <input type="hidden" name="inquiry_type" value="General outreach"> <input type="text" name="website"
               class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <p class="hint">A quick way to say hello or continue a conversation.</p>
+            <p class="hint" id="f3-hint">A quick way to say hello or continue a conversation.</p>
             <div class="field"><label for="f3-msg">Message</label><textarea id="f3-msg" name="message" required
-                placeholder="Short and sweet is fine."></textarea></div>
+                placeholder="Short and sweet is fine." aria-describedby="f3-hint"></textarea></div>
             <div class="field short"><label for="f3-email">Email address</label><input id="f3-email" type="email"
-                name="email" required placeholder="you@organization.org"></div>
+                autocomplete="email" name="email" required placeholder="you@organization.org"></div>
             <button class="submit" type="submit">Submit</button>
             <p class="status" role="status" aria-live="polite"></p>
           </form>
